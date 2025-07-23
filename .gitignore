@@ -1,0 +1,12 @@
+# 環境変数
+docker/mysql/db-variables.env
+src/src/.env
+
+# データベース関連
+docker/mysql/data/
+
+# ログファイル
+log_files/
+
+# 拡張モジュール
+src/vendor/
