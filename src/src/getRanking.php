@@ -2,8 +2,7 @@
 
 function getRanking(PDO $dbh): void
 {
-    $input = trim(fgets(STDIN));
-    $input = explode(' ', $input);
+    $input = explode(" ", trim(fgets(STDIN)));
     $domainCode = $input[0];
     $ranking = intval($input[1]);
 

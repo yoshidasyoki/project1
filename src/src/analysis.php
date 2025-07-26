@@ -14,7 +14,6 @@ $database = $_ENV['MYSQL_DATABASE'];
 
 try {
     $dbh = new PDO("mysql:host=$hostname;dbname=$database", $user, $pass);
-    var_dump(gettype($dbh));
     echo '接続成功' . PHP_EOL;
     echo '以下の機能を実行できます' . PHP_EOL;
     echo '1. 指定したドメインコードの人気記事を検索する' . PHP_EOL;
@@ -26,10 +25,12 @@ try {
         $choice = (int)trim(fgets(STDIN));
 
         if ($choice === 1) {
+            echo '検索したいドメインコードとランキングを入力してください（例：ja 3）' . PHP_EOL;
             getRanking($dbh);
-        } else if ($choice === 2) {
+        } elseif ($choice === 2) {
+            echo '検索したいドメインコードを入力してください（例：ja en）' . PHP_EOL;
             getTotalViews($dbh);
-        } else if ($choice === 9) {
+        } elseif ($choice === 9) {
             echo '終了します' . PHP_EOL;
             exit;
         } else {

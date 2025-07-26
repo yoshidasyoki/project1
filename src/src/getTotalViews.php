@@ -6,7 +6,7 @@ function getTotalViews(PDO $dbh): void
     $placeholders = substr(str_repeat('?,', count($domainCode)), 0, -1);
 
     $sql = "SELECT domain_code, SUM(count_views) AS total_views FROM wiki_log
-            wHERE domain_code IN($placeholders)
+            WHERE domain_code IN($placeholders)
             GROUP BY domain_code
             ORDER BY total_views DESC";
 
