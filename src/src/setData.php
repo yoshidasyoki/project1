@@ -1,0 +1,22 @@
+<?php
+
+function setData(PDO $dbh): void
+{
+    # ログファイルに関する情報取得
+    $fileCount = count(glob("log_files/*"));
+    $fileName = glob("log_files/*")[0];
+
+    # ログファイルが1件だけ存在する場合データをインポート
+    if ($fileCount === 1) {
+        $sql = <<<SQL
+            LOAD DATA LOCAL INFILE '{$fileName}'
+            INTO TABLE wiki_log
+            FIELDS TERMINATED BY ' '
+        SQL;
+        $dbh->exec($sql);
+    } elseif ($fileCount === 0) {
+        throw new Exception('ログファイルが存在しません');
+    } elseif ($fileCount > 1) {
+        throw new Exception('読み込めるログファイルは1件までです');
+    }
+}

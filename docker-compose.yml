@@ -18,7 +18,6 @@ services:
     volumes:
       - ./docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
       - ./docker/mysql/data:/var/lib/mysql
-      - ./log_files/:/var/lib/mysql-files/
     ports:
       - "3306:3306"
     env_file:
