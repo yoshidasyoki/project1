@@ -16,13 +16,8 @@ $hostname = 'db';
 $user = $_ENV['MYSQL_USER'];
 $pass = $_ENV['MYSQL_PASSWORD'];
 $database = $_ENV['MYSQL_DATABASE'];
-
-$options = [
-    PDO::MYSQL_ATTR_LOCAL_INFILE => true,
-];
-
 try {
-    $dbh = new PDO("mysql:host=$hostname;dbname=$database", $user, $pass, $options);
+    $dbh = new PDO("mysql:host=$hostname;dbname=$database", $user, $pass);
     echo '接続成功' . PHP_EOL;
 
     # wiki_logテーブルが存在するか確認

@@ -17,7 +17,9 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+      - ./src/log_files/:/var/lib/mysql-files/
       - ./docker/mysql/data:/var/lib/mysql
+      - ./docker/mysql/initdb:/docker-entrypoint-initdb.d
     ports:
       - "3306:3306"
     env_file:

@@ -6,7 +6,7 @@ function createTable(PDO $dbh): void
     $sql = <<<SQL
         CREATE TABLE wiki_log
         (domain_code    VARCHAR(50),
-        page_title    VARCHAR(200)    BINARY    NOT NULL,
+        page_title    VARCHAR(300)    CHARACTER SET binary    NOT NULL,
         count_views    INTEGER    NOT NULL,
         total_response_size    INTEGER,
         PRIMARY KEY (domain_code, page_title))
