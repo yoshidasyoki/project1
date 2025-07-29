@@ -16,6 +16,7 @@ $hostname = 'db';
 $user = $_ENV['MYSQL_USER'];
 $pass = $_ENV['MYSQL_PASSWORD'];
 $database = $_ENV['MYSQL_DATABASE'];
+
 try {
     $dbh = new PDO("mysql:host=$hostname;dbname=$database", $user, $pass);
     echo '接続成功' . PHP_EOL;
