@@ -2,9 +2,9 @@ FROM php:8.4-apache
 
 WORKDIR /var/www/html
 
-RUN apt-get update && apt-get install -y libonig-dev \
+RUN apt-get update && apt-get install -y libzip-dev \
     # composerに必要なライブラリ群
-    unzip zip git libzip-dev \
+    unzip zip git libonig-dev \
     # 拡張ライブラリのインストール
     && docker-php-ext-install pdo_mysql zip \
     && pecl install xdebug \
