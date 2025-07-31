@@ -30,8 +30,8 @@ https://wikitech.wikimedia.org/wiki/Data_Platform/Data_Lake/Traffic/Pageviews
 
 ### 1. セットアップ
 ローカルの任意の場所にクローンしたら、まずは解析したいログファイルをproject1/src/log_filesディレクトリ下に**1件のみ**格納してください。
-ログファイルはこちらのページからダウンロードできます：https://dumps.wikimedia.org/other/pageviews/
-
+ログファイルはこちらのページからダウンロードできます：https://dumps.wikimedia.org/other/pageviews/  
+※ インストール時にはサンプルのログファイル（ファイル名：sample、ドメインコードが「ja」と「en」のデータを格納）が格納されています。必要に応じて解析したいログファイルに置き換えてください。
 
 次にproject1ディレクトリ下に移動し、以下のコマンドを実行して環境構築（dockerのイメージ生成とコンテナの作成・起動）を行います。
 
