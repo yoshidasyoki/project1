@@ -1,5 +1,2 @@
 # データベース関連
 docker/mysql/data/
-
-# ログファイル
-log_files/
