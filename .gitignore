@@ -1,8 +1,5 @@
 # データベース関連
 docker/mysql/data/
 
-# ログファイル
-log_files/
-
 # 拡張モジュール
 src/vendor/
